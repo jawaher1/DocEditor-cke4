@@ -203,14 +203,14 @@ Le mois de janvier a marqu&eacute; le retour des investisseurs dans un march&eac
 	<script>
 		CKEDITOR.plugins.addExternal('N1ED-editor', '/ckeditor4/plugins/N1ED-editor/', 'plugin.js');
 		CKEDITOR.plugins.addExternal('btgrid', '/ckeditor4/plugins/btgrid/', 'plugin.js');
-		//CKEDITOR.plugins.addExternal( 'exportpdf', '/ckeditor4/plugins/exportpdf', 'plugin.js' );
+		CKEDITOR.plugins.addExternal( 'ExportPdf', '/ckeditor4/plugins/exportpdf', 'plugindefinition.js' );
 
 		CKEDITOR.replace('editor1', {
 			// Define the toolbar: https://ckeditor.com/docs/ckeditor4/latest/features/toolbar.html
 			// The full preset from CDN which we used as a base provides more features than we need.
 			// Also by default it comes with a 3-line toolbar. Here we put all buttons in a single row.
 			toolbar: [
-				{ name: 'document', items: ['Source', 'Print', 'PageBreak'] },
+				{ name: 'document', items: ['Source', 'Print','ExportPdf', 'PageBreak'] },
 				{ name: 'clipboard', items: ['Cut', 'Copy', 'Paste', 'Undo', 'Redo'] },
 				{ name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat', 'CopyFormatting'] },
 				{ name: 'styles', items: ['Format', 'Font', 'FontSize', 'Styles'] },
