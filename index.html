@@ -27,7 +27,7 @@
 
 <body>
 	<div class="container" id="container">
-		
+
 		<textarea id="editor1">
 			<h2 style="text-align:center">&nbsp;</h2>
 
@@ -198,19 +198,21 @@ Le mois de janvier a marqu&eacute; le retour des investisseurs dans un march&eac
 <p style="text-align:center">&nbsp;</p>
 
 	</textarea>
-		<button type="button" onclick="exportPDF()">export pdf</button>
+		<!--<button type="button" onclick="exportPDF()">export pdf</button>-->
 	</div>
 	<script>
 		CKEDITOR.plugins.addExternal('N1ED-editor', '/ckeditor4/plugins/N1ED-editor/', 'plugin.js');
 		CKEDITOR.plugins.addExternal('btgrid', '/ckeditor4/plugins/btgrid/', 'plugin.js');
-		CKEDITOR.plugins.addExternal( 'ExportPdf', '/ckeditor4/plugins/exportpdf', 'plugindefinition.js' );
+		CKEDITOR.plugins.addExternal('ExportPdf', '/ckeditor4/plugins/exportpdf', 'plugindefinition.js');
+		CKEDITOR.plugins.addExternal('easyimage', '/ckeditor4/plugins/easyimage/', 'plugin.js');
+		CKEDITOR.plugins.addExternal('simage', '/ckeditor4/plugins/simage/', 'plugin.js');
 
 		CKEDITOR.replace('editor1', {
 			// Define the toolbar: https://ckeditor.com/docs/ckeditor4/latest/features/toolbar.html
 			// The full preset from CDN which we used as a base provides more features than we need.
 			// Also by default it comes with a 3-line toolbar. Here we put all buttons in a single row.
 			toolbar: [
-				{ name: 'document', items: ['Source', 'Print','ExportPdf', 'PageBreak'] },
+				{ name: 'document', items: ['Source', 'Print', 'ExportPdf', 'PageBreak'] },
 				{ name: 'clipboard', items: ['Cut', 'Copy', 'Paste', 'Undo', 'Redo'] },
 				{ name: 'basicstyles', items: ['Bold', 'Italic', 'Underline', 'Strike', 'RemoveFormat', 'CopyFormatting'] },
 				{ name: 'styles', items: ['Format', 'Font', 'FontSize', 'Styles'] },
@@ -224,9 +226,6 @@ Le mois de janvier a marqu&eacute; le retour des investisseurs dans un march&eac
 
 			],
 
-			// Since we define all configuration options here, let's instruct CKEditor to not load config.js which it does by default.
-			// One HTTP request less will result in a faster startup time.
-			// For more information check https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html#cfg-customConfig
 			customConfig: '',
 
 			// Sometimes applications that convert HTML to PDF prefer setting image width through attributes instead of CSS styles.
@@ -269,52 +268,68 @@ Le mois de janvier a marqu&eacute; le retour des investisseurs dans un march&eac
 			// Simplify the Image and Link dialog windows. The "Advanced" tab is not needed in most cases.
 			removeDialogTabs: 'image:advanced;link:advanced',
 
-			extraPlugins: ["btgrid"],
-			apiKey: "EI4DDFLT",
-			skin: "n1theme,/ckeditor4/skins/n1theme/",
-			removePlugins: "iframe"
-
-			,
-
-			// Define the list of styles which should be available in the Styles dropdown list.
-			// If the "class" attribute is used to style an element, make sure to define the style for the class in "mystyles.css"
-			// (and on your website so that it rendered in the same way).
-			// Note: by default CKEditor looks for styles.js file. Defining stylesSet inline (as below) stops CKEditor from loading
-			// that file, which means one HTTP request less (and a faster startup).
-			// For more information see https://ckeditor.com/docs/ckeditor4/latest/features/styles.html
-			stylesSet: [
-				/* Inline Styles */
-				{ name: 'Marker', element: 'span', attributes: { 'class': 'marker' } },
-				{ name: 'Cited Work', element: 'cite' },
-				{ name: 'Inline Quotation', element: 'q' },
-
-				/* Object Styles */
-				{
-					name: 'Special Container',
-					element: 'div',
-					styles: {
-						padding: '5px 10px',
-						background: '#eee',
-						border: '1px solid #ccc'
-					}
+			extraPlugins: ["btgrid", "simage"],
+			imageUploadURL: '//localhost:3001/content/upload',
+			//apiKey: "EI4DDFLT",
+			skin: "moono-lisa,/ckeditor4/skins/moono-lisa/",
+			removePlugins: ["iframe"],
+			cloudServices_uploadUrl: 'https://79425.cke-cs.com/easyimage/upload/',
+			cloudServices_tokenUrl : 'https://79425.cke-cs.com/token/dev/975e4c7927ca04d5fbdb4f9b6f2a5c8fca9bd02178616eb14827bfcbe7a0',
+			
+			
+			
+			ExportPdf_stylesheets : ['mystyles.css'],
+			ExportPdf_fileName  : 'my-file.pdf',
+			ExportPdf_options :  {
+					header_html: '<div class="styled">Header content</div>',
+					footer_html: '<div class="styled-counter"><span class="pageNumber"></span></div>',
+					header_and_footer_css: '.styled { font-weight: bold; padding: 10px; } .styled-counter { font-size: 1em; color: hsl(0, 0%, 60%); }',
+					margin_top: '2cm',
+					margin_bottom: '2cm'
 				},
-				{
-					name: 'Compact table',
-					element: 'table',
-					attributes: {
-						cellpadding: '5',
-						cellspacing: '0',
-						border: '1',
-						bordercolor: '#ccc'
+
+
+
+				// Define the list of styles which should be available in the Styles dropdown list.
+				// If the "class" attribute is used to style an element, make sure to define the style for the class in "mystyles.css"
+				// (and on your website so that it rendered in the same way).
+				// Note: by default CKEditor looks for styles.js file. Defining stylesSet inline (as below) stops CKEditor from loading
+				// that file, which means one HTTP request less (and a faster startup).
+				// For more information see https://ckeditor.com/docs/ckeditor4/latest/features/styles.html
+				stylesSet: [
+					/* Inline Styles */
+					{ name: 'Marker', element: 'span', attributes: { 'class': 'marker' } },
+					{ name: 'Cited Work', element: 'cite' },
+					{ name: 'Inline Quotation', element: 'q' },
+
+					/* Object Styles */
+					{
+						name: 'Special Container',
+						element: 'div',
+						styles: {
+							padding: '5px 10px',
+							background: '#eee',
+							border: '1px solid #ccc'
+						}
 					},
-					styles: {
-						'border-collapse': 'collapse'
-					}
-				},
-				{ name: 'Borderless Table', element: 'table', styles: { 'border-style': 'hidden', 'background-color': '#E6E6FA' } },
-				{ name: 'Square Bulleted List', element: 'ul', styles: { 'list-style-type': 'square' } }
-			]
-		});
+					{
+						name: 'Compact table',
+						element: 'table',
+						attributes: {
+							cellpadding: '5',
+							cellspacing: '0',
+							border: '1',
+							bordercolor: '#ccc'
+						},
+						styles: {
+							'border-collapse': 'collapse'
+						}
+					},
+					{ name: 'Borderless Table', element: 'table', styles: { 'border-style': 'hidden', 'background-color': '#E6E6FA' } },
+					{ name: 'Square Bulleted List', element: 'ul', styles: { 'list-style-type': 'square' } }
+				]
+			});
+			
 
 
 
