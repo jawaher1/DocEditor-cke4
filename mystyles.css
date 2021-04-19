@@ -13,7 +13,7 @@ body.document-editor {
     margin-bottom: 30px;
     font-size: 11px;
     line-height: 24px;
-    font-family: "Nunito Sans", Verdana, Helvetica, sans-serif;
+    font-family: "Nunito Sans", Verdana, Helvetica, sans-serif, 'Calibri' ;
 }
 
 body.document-editor td, body.document-editor th {
