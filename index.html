@@ -12,17 +12,21 @@
 	<!--<script src="https://cdn.ckeditor.com/4.8.0/full-all/ckeditor.js"></script>-->
 	<script src="ckeditor4/ckeditor.js"></script>
 	<!-- BOOTSTRAP -->
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-
-
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+		crossorigin="anonymous"></script>
+	
 	<!--PDFmake-->
 	<script src='https://cdn.jsdelivr.net/npm/pdfmake@latest/build/pdfmake.min.js'></script>
 	<script src='https://cdn.jsdelivr.net/npm/pdfmake@latest/build/vfs_fonts.min.js'></script>
 	<!-- html-to-pdfmake file: -->
 	<script src="https://cdn.jsdelivr.net/npm/html-to-pdfmake/browser.js"></script>
 
-
+	<!--CSS-->
+	<link href="./mystyles.css" crossorigin="anonymous">
 
 	<title>Document Editor</title>
 	<style type="text/css">
@@ -37,96 +41,196 @@
 		.container {
 			margin: 0 auto;
 		}
+
 		@media print {
-         
-      
-		* {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-.btgrid {
-  padding: 1px;
-  margin: 2px auto;
-  background: #fff;
-  border-radius: 0px;
-  border: 0px solid #ddd;
- 
-}
-.content {
- 
-  border: 0px solid #cccccc;
-  padding: 0 1px;
-  border-radius: 0px;
-  background: #fff;
-  min-height: 5em;
+
+
+			body {
+				width: 1200px;
+			}
+
+			div[class|=col-] {
+				float: left;
+			}
+
+			.col-sm-6 {
+				width: 50%
+			}
+
+
+			* {
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+
+			.btgrid {
+				padding: 1px;
+				margin: 2px auto;
+				background: #fff;
+				border-radius: 0px;
+				border: 0px solid #ddd;
+
+			}
+
+			.content {
+
+				border: 0px solid #cccccc;
+				padding: 0 1px;
+				border-radius: 0px;
+				background: #fff;
+				min-height: 5em;
+			}
+
+			.row {
+				margin-right: -15px;
+				margin-left: -15px;
+				padding-bottom: 5px;
+			}
+
+			.row:last-child {
+				padding-bottom: 0;
+			}
+
+			.row:after,
+			.row:before,
+			.btgrid:before,
+			.btgrid:after {
+				display: table;
+				content: " ";
+			}
+
+			.row:after {
+				clear: both;
+			}
+
+			:after,
+			:before {
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+			}
+
+			.col-md-1 {
+				width: 8.33333333%;
+			}
+
+			.col-md-2 {
+				width: 16.66666667%;
+			}
+
+			.col-md-3 {
+				width: 25%;
+			}
+
+			.col-md-4 {
+				width: 33.33333333%;
+			}
+
+			.col-md-5 {
+				width: 41.66666667%;
+			}
+
+			.col-md-6 {
+				width: 50%;
+			}
+
+			.col-md-7 {
+				width: 58.33333333%;
+			}
+
+			.col-md-8 {
+				width: 66.66666667%;
+			}
+
+			.col-md-9 {
+				width: 75%;
+			}
+
+			.col-md-10 {
+				width: 83.33333333%;
+			}
+
+			.col-md-11 {
+				width: 91.66666667%;
+			}
+
+			.col-md-12 {
+				width: 100%;
+			}
+
+			.col-md-1,
+			.col-md-10,
+			.col-md-11,
+			.col-md-12,
+			.col-md-2,
+			.col-md-3,
+			.col-md-4,
+			.col-md-5,
+			.col-md-6,
+			.col-md-7,
+			.col-md-8,
+			.col-md-9 {
+
+				position: relative;
+				min-height: 1px;
+				padding-right: 15px;
+				padding-left: 15px;
+			}
+			@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:200,200i,400,400i,600,600i,700,700i');
+
+body.document-editor {
+    width: 20cm;
+    min-height: 28cm;
+    padding: 0.4cm 0.4cm 0.4cm;
+    margin: 0.1cm auto;
+    border: 1px #D3D3D3 solid;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 11px;
+    line-height: 24px;
+    font-family: "Nunito Sans", Verdana, Helvetica, sans-serif;
 }
 
-.row {
-  margin-right: -15px;
-  margin-left: -15px;
-  padding-bottom: 5px;
+body.document-editor td, body.document-editor th {
+    font-size: 0.9em;
 }
-.row:last-child {
-  padding-bottom:0;
+
+body.document-editor h1 {
+    margin-bottom:1cm;
 }
-.row:after, .row:before, .btgrid:before, .btgrid:after {
-  display: table;
-  content: " ";
+
+body.document-editor table {
+    margin-top:0.5cm;
+    margin-bottom:0.5cm;
 }
-.row:after {
-  clear: both;
+
+body.document-editor table td {
+    border-right: 1px solid #d0d0d0;
+    border-bottom: 1px solid #d0d0d0;
 }
-:after, :before {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+
+body.document-editor table td:first-of-type {
+    border-left: 1px solid #d0d0d0;
 }
-.col-md-1 {
-  width: 8.33333333%;
+
+body.document-editor table tr:first-of-type td {
+    border-top: 1px solid #d0d0d0;
 }
-.col-md-2 {
-  width: 16.66666667%;
+
+body.document-editor table thead th {
+    border-top: 1px solid #d0d0d0;
+    border-right: 1px solid #d0d0d0;
 }
-.col-md-3 {
-  width: 25%;
+
+body.document-editor table thead th:first-of-type {
+    border-left: 1px solid #d0d0d0;
 }
-.col-md-4 {
-  width: 33.33333333%;
-}
-.col-md-5 {
-  width: 41.66666667%;
-}
-.col-md-6 {
-  width: 50%;
-}
-.col-md-7 {
-  width: 58.33333333%;
-}
-.col-md-8 {
-  width: 66.66666667%;
-}
-.col-md-9 {
-  width: 75%;
-}
-.col-md-10 {
-  width: 83.33333333%;
-}
-.col-md-11 {
-  width: 91.66666667%;
-}
-.col-md-12 {
-  width: 100%;
-}
-.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9 {
-  float: left;
-  position: relative;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
-}
+
 		}
-
 	</style>
 </head>
 
@@ -134,174 +238,175 @@
 	<div class="container" id="container">
 
 		<div id="editor1">
-			<h2 style="text-align:center"></h2>
+			<h2 style="text-align:center">&nbsp;</h2>
 
-<table border="1" cellpadding="1" cellspacing="0" class="schedule" style="border-collapse:collapse; height:50px; width:70%">
-	<tbody>
-		<tr>
-			<td style="background-color:#339999"><span style="color:#ffffff"><span style="font-size:14px"><strong>&nbsp; GROUPAMA AXIOM LEGACY 21 P</strong></span></span></td>
-		</tr>
-	</tbody>
-</table>
-
-<p><span style="font-size:11px">RAPPORT MENSUEL AU 28/02/2019</span></p>
-
-<p><span style="font-size:11px">Code ISIN Part P : FR0013251881</span></p>
-
-<p><span style="font-size:11px">Indicateur de r&eacute;f&eacute;rence : Euribor 3 mois +3%&nbsp;</span></p>
-
-<div class="btgrid">
-<div class="row row-1">
-<div class="col col-md-6">
-<div class="content">
-<p><span style="font-size:12px"><span style="color:#e67e22"><strong>CHIFFRES CLES</strong></span></span></p>
-
-<table border="1" cellpadding="1" cellspacing="0" class="schedule" style="border-collapse:collapse; width:300px">
-	<tbody>
-		<tr>
-			<td colspan="3" rowspan="1">Actif net toutes parts confondues :</td>
-			<td>198M&euro;</td>
-		</tr>
-		<tr>
-			<td colspan="3" rowspan="1" style="background-color:#eeeeee">Volatilit&eacute; 1 an (Part I) :</td>
-			<td style="background-color:#eeeeee">1,97%</td>
-		</tr>
-		<tr>
-			<td colspan="3" rowspan="1">Ratio de Sharpe 1 an (Part I) :</td>
-			<td>-1,99</td>
-		</tr>
-		<tr>
-			<td colspan="3" rowspan="1" style="background-color:#eeeeee">Nombre de positions :</td>
-			<td style="background-color:#eeeeee">82</td>
-		</tr>
-	</tbody>
-</table>
-
-<p><span style="color:#e67e22"><strong>INFORMATIONS SUR LE FONDS</strong></span></p>
-
-<p><span style="color:#2980b9">Caract&eacute;ristiques</span></p>
-
-<table border="1" cellpadding="1" cellspacing="0" class="schedule" style="border-collapse:collapse; width:300px">
-	<tbody>
-		<tr>
-			<td colspan="3" rowspan="1">Actif net toutes parts confondues :</td>
-			<td>198M&euro;</td>
-		</tr>
-		<tr>
-			<td colspan="3" rowspan="1" style="background-color:#eeeeee">Volatilit&eacute; 1 an (Part I) :</td>
-			<td style="background-color:#eeeeee">1,97%</td>
-		</tr>
-		<tr>
-			<td colspan="3" rowspan="1">Ratio de Sharpe 1 an (Part I) :</td>
-			<td>-1,99</td>
-		</tr>
-		<tr>
-			<td colspan="3" rowspan="1" style="background-color:#eeeeee">Nombre de positions :</td>
-			<td style="background-color:#eeeeee">82</td>
-		</tr>
-	</tbody>
-</table>
-
-<p><span style="color:#2980b9">Conditions de commercialisation</span></p>
-
-<table border="1" cellpadding="1" cellspacing="0" class="schedule" style="border-collapse:collapse; width:300px">
-	<tbody>
-		<tr>
-			<td colspan="3" rowspan="1">Actif net toutes parts confondues :</td>
-			<td>198M&euro;</td>
-		</tr>
-		<tr>
-			<td colspan="3" rowspan="1" style="background-color:#eeeeee">Volatilit&eacute; 1 an (Part I) :</td>
-			<td style="background-color:#eeeeee">1,97%</td>
-		</tr>
-		<tr>
-			<td colspan="3" rowspan="1">Ratio de Sharpe 1 an (Part I) :</td>
-			<td>-1,99</td>
-		</tr>
-		<tr>
-			<td colspan="3" rowspan="1" style="background-color:#eeeeee">Nombre de positions :</td>
-			<td style="background-color:#eeeeee">82</td>
-		</tr>
-	</tbody>
-</table>
-
-<p><span style="color:#e67e22"><strong>Frais</strong></span></p>
-
-<table border="1" cellpadding="1" cellspacing="0" class="schedule" style="border-collapse:collapse; width:300px">
-	<tbody>
-		<tr>
-			<td colspan="3" rowspan="1">Actif net toutes parts confondues :</td>
-			<td>198M&euro;</td>
-		</tr>
-		<tr>
-			<td colspan="3" rowspan="1" style="background-color:#eeeeee">Volatilit&eacute; 1 an (Part I) :</td>
-			<td style="background-color:#eeeeee">1,97%</td>
-		</tr>
-		<tr>
-			<td colspan="3" rowspan="1">Ratio de Sharpe 1 an (Part I) :</td>
-			<td>-1,99</td>
-		</tr>
-		<tr>
-			<td colspan="3" rowspan="1" style="background-color:#eeeeee">Nombre de positions :</td>
-			<td style="background-color:#eeeeee">82</td>
-		</tr>
-	</tbody>
-</table>
-
-<p><span style="color:#e67e22"><strong>FOURCHETTE DE SENSIBILITE</strong></span></p>
-
-<p>L&rsquo;OPCVM peut investir sur des &eacute;metteurs qui ont une notation long terme au minimum d&rsquo;&laquo; Investment Grade &raquo; et jusqu&rsquo;&agrave; 20% sur des &eacute;metteurs &agrave; haut rendement (dits &laquo; sp&eacute;culatifs &raquo;) ou &eacute;metteurs non not&eacute;s. La part des investissements en produits de taux sera comprise entre 0 et 110% de l&rsquo;actif net. Il pourra investir, jusqu&rsquo;&agrave; 20% maximum de son actif net, dans des obligations &laquo; Additional Tier1 &raquo; ou &laquo; contingent convertible bonds &raquo; (Coco Bonds). L&rsquo;OPCVM pourra investir dans des &laquo; preferred shares &raquo; ou &laquo; actions de pr&eacute;f&eacute;rence &raquo; jusqu&rsquo;&agrave; 50% de son actif net et dans des actions classiques jusqu&rsquo;&agrave; 10% de son actif&nbsp;</p>
-</div>
-</div>
-
-<div class="col col-md-6">
-<div class="content">
-<p><span style="color:#e67e22"><strong>EVOLUTION DE LA PERFORMANCE *</strong></span></p>
-
-<p><span style="font-size:11px"><span style="color:#2980b9">Performances 5 ans (base 100)</span></span></p>
-
-<p><img alt="" height="212" src="data:image/jpeg;base64,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" width="350" /></p>
-
-<p><span style="color:#e67e22"><strong>ANALYSE DU RISQUE (sur 1 an)</strong></span></p>
-
-<table border="1" cellpadding="1" cellspacing="0" class="schedule" style="border-collapse:collapse; width:300px">
-	<tbody>
-		<tr>
-			<td colspan="3" rowspan="1">Actif net toutes parts confondues :</td>
-			<td>198M&euro;</td>
-		</tr>
-		<tr>
-			<td colspan="3" rowspan="1" style="background-color:#eeeeee">Volatilit&eacute; 1 an (Part I) :</td>
-			<td style="background-color:#eeeeee">1,97%</td>
-		</tr>
-		<tr>
-			<td colspan="3" rowspan="1">Ratio de Sharpe 1 an (Part I) :</td>
-			<td>-1,99</td>
-		</tr>
-		<tr>
-			<td colspan="3" rowspan="1" style="background-color:#eeeeee">Nombre de positions :</td>
-			<td style="background-color:#eeeeee">82</td>
-		</tr>
-	</tbody>
-</table>
-
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
-</div>
-</div>
-</div>
-</div>
-
-<p><span style="color:#e67e22"><strong>COMMENTAIRE DE GESTION</strong></span></p>
-
-<p><strong>Commentaire de march&eacute;</strong><br />
-Le mois de janvier a marqu&eacute; le retour des investisseurs dans un march&eacute; o&ugrave; la liquidit&eacute; manquait fin 2018. Les valeurs financi&egrave;res ont d&eacute;marr&eacute; l&rsquo;ann&eacute;e en hausse malgr&eacute; les quelques inqui&eacute;tudes &eacute;conomiques qui persistent (Brexit, entr&eacute;e en r&eacute;cession en Italie, la guerre commerciale entre la Chine et les Etats-Unis). Le maintien d&rsquo;une politique accommodante par les banques centrales, confirm&eacute; par le ton dovish de la BCE a rassur&eacute; les investisseurs. Ainsi, le march&eacute; primaire a commenc&eacute; l&rsquo;ann&eacute;e avec un volume important d&rsquo;&eacute;missions &agrave; des niveaux de prime qui se sont progressivement r&eacute;sorb&eacute;es. Dans les ebondissements du Brexit, malgr&eacute; le rejet massif de l&#39;Accord de Sortie propos&eacute; au vote le 15 janvier, les motions du 29 janvier ont redonn&eacute; &agrave; Theresa May la l&eacute;gitimit&eacute; pour ren&eacute;gocier avec Bruxelles le &laquo; backstop &raquo; irlandais avant de nouveaux votes le 14 f&eacute;vrier. Les r&eacute;sultats du T4 d&eacute;j&agrave; publi&eacute;s sont mitig&eacute;s ce qui ne remet pas en cause la solidit&eacute; des fondamentaux. Plusieurs avertissements ont &eacute;t&eacute; communiqu&eacute;s : apr&egrave;s Natixis, la Soci&eacute;t&eacute; G&eacute;n&eacute;rale attend une baisse de 20% des r&eacute;sultats de ses activit&eacute;s de march&eacute;, et Metro Bank a annonc&eacute; une sous-estimation de la pond&eacute;ration de ses risques dans ses ratios en capital.</p>
-
-<p>&nbsp;</p>
-
-<p style="text-align:center">&nbsp;</p>
-</div>
+			<table border="1" cellpadding="1" cellspacing="0" class="schedule" style="border-collapse:collapse; height:50px; width:70%">
+				<tbody>
+					<tr>
+						<td style="background-color:#339999"><span style="color:#ffffff"><span style="font-size:14px"><strong>&nbsp; GROUPAMA AXIOM LEGACY 21 P</strong></span></span></td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<p><span style="font-size:11px">RAPPORT MENSUEL AU 28/02/2019</span></p>
+			
+			<p><span style="font-size:11px">Code ISIN Part P : FR0013251881</span></p>
+			
+			<p><span style="font-size:11px">Indicateur de r&eacute;f&eacute;rence : Euribor 3 mois +3%&nbsp;</span></p>
+			
+			<div class="btgrid">
+			<div class="row row-1">
+			<div class="col col-md-6">
+			<div class="content">
+			<p><span style="font-size:12px"><span style="color:#e67e22"><strong>CHIFFRES CLES</strong></span></span></p>
+			
+			<table border="1" cellpadding="1" cellspacing="0" class="schedule" style="border-collapse:collapse; width:300px">
+				<tbody>
+					<tr>
+						<td colspan="3" rowspan="1">Actif net toutes parts confondues :</td>
+						<td>198M&euro;</td>
+					</tr>
+					<tr>
+						<td colspan="3" rowspan="1" style="background-color:#eeeeee">Volatilit&eacute; 1 an (Part I) :</td>
+						<td style="background-color:#eeeeee">1,97%</td>
+					</tr>
+					<tr>
+						<td colspan="3" rowspan="1">Ratio de Sharpe 1 an (Part I) :</td>
+						<td>-1,99</td>
+					</tr>
+					<tr>
+						<td colspan="3" rowspan="1" style="background-color:#eeeeee">Nombre de positions :</td>
+						<td style="background-color:#eeeeee">82</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<p><span style="color:#e67e22"><strong>INFORMATIONS SUR LE FONDS</strong></span></p>
+			
+			<p><span style="color:#2980b9">Caract&eacute;ristiques</span></p>
+			
+			<table border="1" cellpadding="1" cellspacing="0" class="schedule" style="border-collapse:collapse; width:300px">
+				<tbody>
+					<tr>
+						<td colspan="3" rowspan="1">Actif net toutes parts confondues :</td>
+						<td>198M&euro;</td>
+					</tr>
+					<tr>
+						<td colspan="3" rowspan="1" style="background-color:#eeeeee">Volatilit&eacute; 1 an (Part I) :</td>
+						<td style="background-color:#eeeeee">1,97%</td>
+					</tr>
+					<tr>
+						<td colspan="3" rowspan="1">Ratio de Sharpe 1 an (Part I) :</td>
+						<td>-1,99</td>
+					</tr>
+					<tr>
+						<td colspan="3" rowspan="1" style="background-color:#eeeeee">Nombre de positions :</td>
+						<td style="background-color:#eeeeee">82</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<p><span style="color:#2980b9">Conditions de commercialisation</span></p>
+			
+			<table border="1" cellpadding="1" cellspacing="0" class="schedule" style="border-collapse:collapse; width:300px">
+				<tbody>
+					<tr>
+						<td colspan="3" rowspan="1">Actif net toutes parts confondues :</td>
+						<td>198M&euro;</td>
+					</tr>
+					<tr>
+						<td colspan="3" rowspan="1" style="background-color:#eeeeee">Volatilit&eacute; 1 an (Part I) :</td>
+						<td style="background-color:#eeeeee">1,97%</td>
+					</tr>
+					<tr>
+						<td colspan="3" rowspan="1">Ratio de Sharpe 1 an (Part I) :</td>
+						<td>-1,99</td>
+					</tr>
+					<tr>
+						<td colspan="3" rowspan="1" style="background-color:#eeeeee">Nombre de positions :</td>
+						<td style="background-color:#eeeeee">82</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<p><span style="color:#e67e22"><strong>Frais</strong></span></p>
+			
+			<table border="1" cellpadding="1" cellspacing="0" class="schedule" style="border-collapse:collapse; width:300px">
+				<tbody>
+					<tr>
+						<td colspan="3" rowspan="1">Actif net toutes parts confondues :</td>
+						<td>198M&euro;</td>
+					</tr>
+					<tr>
+						<td colspan="3" rowspan="1" style="background-color:#eeeeee">Volatilit&eacute; 1 an (Part I) :</td>
+						<td style="background-color:#eeeeee">1,97%</td>
+					</tr>
+					<tr>
+						<td colspan="3" rowspan="1">Ratio de Sharpe 1 an (Part I) :</td>
+						<td>-1,99</td>
+					</tr>
+					<tr>
+						<td colspan="3" rowspan="1" style="background-color:#eeeeee">Nombre de positions :</td>
+						<td style="background-color:#eeeeee">82</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<p><span style="color:#e67e22"><strong>FOURCHETTE DE SENSIBILITE</strong></span></p>
+			
+			<p>L&rsquo;OPCVM peut investir sur des &eacute;metteurs qui ont une notation long terme au minimum d&rsquo;&laquo; Investment Grade &raquo; et jusqu&rsquo;&agrave; 20% sur des &eacute;metteurs &agrave; haut rendement (dits &laquo; sp&eacute;culatifs &raquo;) ou &eacute;metteurs non not&eacute;s. La part des investissements en produits de taux sera comprise entre 0 et 110% de l&rsquo;actif net. Il pourra investir, jusqu&rsquo;&agrave; 20% maximum de son actif net, dans des obligations &laquo; Additional Tier1 &raquo; ou &laquo; contingent convertible bonds &raquo; (Coco Bonds). L&rsquo;OPCVM pourra investir dans des &laquo; preferred shares &raquo; ou &laquo; actions de pr&eacute;f&eacute;rence &raquo; jusqu&rsquo;&agrave; 50% de son actif net et dans des actions classiques jusqu&rsquo;&agrave; 10% de son actif&nbsp;</p>
+			</div>
+			</div>
+			
+			<div class="col col-md-6">
+			<div class="content">
+			<p><span style="color:#e67e22"><strong>EVOLUTION DE LA PERFORMANCE *</strong></span></p>
+			
+			<p><span style="font-size:11px"><span style="color:#2980b9">Performances 5 ans (base 100)</span></span></p>
+			
+			<p><img alt="" height="212" src="https://docs.telerik.com/devtools/aspnet-ajax/controls/htmlchart/chart-types/images/htmlchart-linechart-simple-example.png" width="350" /></p>
+			
+			<p><span style="color:#e67e22"><strong>ANALYSE DU RISQUE (sur 1 an)</strong></span></p>
+			
+			<table border="1" cellpadding="1" cellspacing="0" class="schedule" style="border-collapse:collapse; width:300px">
+				<tbody>
+					<tr>
+						<td colspan="3" rowspan="1">Actif net toutes parts confondues :</td>
+						<td>198M&euro;</td>
+					</tr>
+					<tr>
+						<td colspan="3" rowspan="1" style="background-color:#eeeeee">Volatilit&eacute; 1 an (Part I) :</td>
+						<td style="background-color:#eeeeee">1,97%</td>
+					</tr>
+					<tr>
+						<td colspan="3" rowspan="1">Ratio de Sharpe 1 an (Part I) :</td>
+						<td>-1,99</td>
+					</tr>
+					<tr>
+						<td colspan="3" rowspan="1" style="background-color:#eeeeee">Nombre de positions :</td>
+						<td style="background-color:#eeeeee">82</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<p>&nbsp;</p>
+			
+			<p>&nbsp;</p>
+			</div>
+			</div>
+			</div>
+			</div>
+			
+			<p><span style="color:#e67e22"><strong>COMMENTAIRE DE GESTION</strong></span></p>
+			
+			<p><strong>Commentaire de march&eacute;</strong><br />
+			Le mois de janvier a marqu&eacute; le retour des investisseurs dans un march&eacute; o&ugrave; la liquidit&eacute; manquait fin 2018. Les valeurs financi&egrave;res ont d&eacute;marr&eacute; l&rsquo;ann&eacute;e en hausse malgr&eacute; les quelques inqui&eacute;tudes &eacute;conomiques qui persistent (Brexit, entr&eacute;e en r&eacute;cession en Italie, la guerre commerciale entre la Chine et les Etats-Unis). Le maintien d&rsquo;une politique accommodante par les banques centrales, confirm&eacute; par le ton dovish de la BCE a rassur&eacute; les investisseurs. Ainsi, le march&eacute; primaire a commenc&eacute; l&rsquo;ann&eacute;e avec un volume important d&rsquo;&eacute;missions &agrave; des niveaux de prime qui se sont progressivement r&eacute;sorb&eacute;es. Dans les ebondissements du Brexit, malgr&eacute; le rejet massif de l&#39;Accord de Sortie propos&eacute; au vote le 15 janvier, les motions du 29 janvier ont redonn&eacute; &agrave; Theresa May la l&eacute;gitimit&eacute; pour ren&eacute;gocier avec Bruxelles le &laquo; backstop &raquo; irlandais avant de nouveaux votes le 14 f&eacute;vrier. Les r&eacute;sultats du T4 d&eacute;j&agrave; publi&eacute;s sont mitig&eacute;s ce qui ne remet pas en cause la solidit&eacute; des fondamentaux. Plusieurs avertissements ont &eacute;t&eacute; communiqu&eacute;s : apr&egrave;s Natixis, la Soci&eacute;t&eacute; G&eacute;n&eacute;rale attend une baisse de 20% des r&eacute;sultats de ses activit&eacute;s de march&eacute;, et Metro Bank a annonc&eacute; une sous-estimation de la pond&eacute;ration de ses risques dans ses ratios en capital.</p>
+			
+			<p>&nbsp;</p>
+			
+			<p style="text-align:center">&nbsp;</p>
+			
+		</div>
 
 
 
@@ -385,25 +490,6 @@ Le mois de janvier a marqu&eacute; le retour des investisseurs dans un march&eac
 			cloudServices_tokenUrl: 'https://79425.cke-cs.com/token/dev/975e4c7927ca04d5fbdb4f9b6f2a5c8fca9bd02178616eb14827bfcbe7a0',
 
 
-			/*
-			ExportPdf_stylesheets : ['mystyles.css'],
-			ExportPdf_fileName  : 'my-file.pdf',
-			ExportPdf_options :  {
-					header_html: '<div class="styled">Header content</div>',
-					footer_html: '<div class="styled-counter"><span class="pageNumber"></span></div>',
-					header_and_footer_css: '.styled { font-weight: bold; padding: 10px; } .styled-counter { font-size: 1em; color: hsl(0, 0%, 60%); }',
-					margin_top: '2cm',
-					margin_bottom: '2cm'
-				},
-*/
-
-
-			// Define the list of styles which should be available in the Styles dropdown list.
-			// If the "class" attribute is used to style an element, make sure to define the style for the class in "mystyles.css"
-			// (and on your website so that it rendered in the same way).
-			// Note: by default CKEditor looks for styles.js file. Defining stylesSet inline (as below) stops CKEditor from loading
-			// that file, which means one HTTP request less (and a faster startup).
-			// For more information see https://ckeditor.com/docs/ckeditor4/latest/features/styles.html
 			stylesSet: [
 				/* Inline Styles */
 				{ name: 'Marker', element: 'span', attributes: { 'class': 'marker' } },
@@ -437,22 +523,20 @@ Le mois de janvier a marqu&eacute; le retour des investisseurs dans un march&eac
 				{ name: 'Square Bulleted List', element: 'ul', styles: { 'list-style-type': 'square' } }
 			]
 		});
-		/*
 		
+		/*
 				CKEDITOR.config.exportPdf_options = {
 					header_html: '<div style="color:red; height : 50px">Header content</div>',
 					footer_html: '<div class="styled-counter"><span class="pageNumber"></span></div>',
 					header_and_footer_css: '.styled { font-weight: bold; padding: 10px; } .styled-counter { font-size: 1em; color: hsl(0, 0%, 60%); }',
 					margin_top: '2cm',
 					margin_bottom: '2cm'
-				}
-					CKEDITOR.Config.exportPdf_fileName = function (editor) {
-						return 'file.pdf';
-					}
-				CKEDITOR.exportPdf_stylesheets = ['mystyles.css'],
-				*/
+				}*/
+					
+			//	CKEDITOR.exportPdf_stylesheets = './mystyles.css',
+				
 
-		
+
 		/*	
 			html2canvas(document.getElementById('editor1')).then(function(canvas) {
 	document.body.appendChild(canvas)});
@@ -487,11 +571,17 @@ Le mois de janvier a marqu&eacute; le retour des investisseurs dans un march&eac
 			 html2pdf().from(element).set(opt).save().then(function (done) {
 			   console.log("done export!")
 			 });*/
-			var element = document.querySelector('#editor1').innerHTML;
-			var val = htmlToPdfmake(element);
-			console.log(val)
-			var dd = { content: val };
-			pdfMake.createPdf(dd).download();
+			
+			var data = CKEDITOR.instances.editor1.getData();
+		   var element = document.querySelector('#editor1').innerHTML + data
+		   var val = htmlToPdfmake(element);
+		   console.log(val)
+		   var dd = { content: val };
+		   pdfMake.createPdf(dd).download();
+
+
+		
+
 		}
 
 	</script>
