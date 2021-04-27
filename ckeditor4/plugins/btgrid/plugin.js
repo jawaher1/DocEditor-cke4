@@ -8,6 +8,8 @@
        var lang = editor.lang.btgrid;
 
        CKEDITOR.dialog.add('btgrid',  this.path + 'dialogs/btgrid.js');
+       CKEDITOR.config.shiftEnterMode = CKEDITOR.ENTER_P;
+       CKEDITOR.config.enterMode = CKEDITOR.ENTER_BR;
 
        editor.addContentsCss( this.path + 'styles/editor.css');
        // Add widget
@@ -25,6 +27,8 @@
            },
            editables: {
              content: '',
+             
+             
            },
            template:
                    '<div class="btgrid">' +
@@ -63,19 +67,7 @@
            // Create grid
            createGrid: function(colCount, row, rowNumber) {
              var content = '<div class="row row-' + rowNumber + '">';
-             content = content + '<div style="float:left" class="col col-md-' + maxGridColumns/colCount + '">' +
-             '  <div class="content">' +
-             '    <p>Col ' + 1 + ' content area</p>' +
-             '  </div>' +
-             '</div>';
-
-             content = content + '<div style="float:right" class="col col-md-' + maxGridColumns/colCount + '">' +
-             '  <div class="content">' +
-             '    <p>Col ' + 2 + ' content area</p>' +
-             '  </div>' +
-             '</div>';
-
-             for (var i = 3; i <= colCount; i++) {
+             for (var i = 1; i <= colCount; i++) {
                content = content + '<div class="col col-md-' + maxGridColumns/colCount + '">' +
                                    '  <div class="content">' +
                                    '    <p>Col ' + i + ' content area</p>' +
@@ -83,6 +75,7 @@
                                    '</div>';
              }
              content =content + '</div>';
+             content =content + "<div class='clearfix'></div>"
              row.appendHtml(content);
              this.createEditable(colCount, rowNumber);
            },
@@ -93,6 +86,11 @@
                   selector: '.row-'+ rowNumber +' > div:nth-child('+ i +') div.content'
                 } );
               }
+              /*
+              let element = document.getElementsByClassName("content")[0];
+              console.log(element)
+              let computedFontSize = element.style.fontSize
+              console.log(computedFontSize)*/
             }
           }
         );
